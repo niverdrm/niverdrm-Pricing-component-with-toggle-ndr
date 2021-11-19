@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+:root {
+  --Linear-Gradient: hsl(236, 72%, 79%);
+  --Linear-Gradient2: hsl(237, 63%, 64%);
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+* {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-image: url(../images/bg-bottom.svg), url(../images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position: 1px 420px, 240px 0px;
+  background-size: 250px, 250px;
+  background-color: var(--Very-Light-Grayish-Blue);
+  margin: 16px;
+}
+.header {
+  text-align: center;
+}
+.header h1 {
+  color: var(--Grayish-Blue);
+  margin-top: 30px;
+  font-weight: 700px;
+}
+.option {
+  margin-top: 10px;
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background: var(--Linear-Gradient2);
+  border-radius: 15px;
+  padding: 1px;
+}
+input[type="checkbox"] {
+  visibility: hidden;
+}
+.option label {
+  /* aspecto */
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 17px;
+  background: #fcfff4;
+
+  cursor: pointer;
+
+  /* Posicionamiento */
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  z-index: 1;
+
+  /* Comportamiento */
+  transition: all 0.4s ease;
+
+  /* ocultar el posible texto que tenga */
+  overflow: hidden;
+  text-indent: 35px;
+  transition: text-indent 0s;
+}
+
+.option input[type="checkbox"]:checked + label {
+  left: auto;
+  right: 5px;
+}
+.option:after {
+  font: 12px/30px Arial, sans-serif;
+  color: #aaa;
+  position: absolute;
+  right: 10px;
+  z-index: 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+}
+
+.option:before {
+  font: 12px/30px Arial, sans-serif;
+  color: lime;
+  position: absolute;
+  left: 10px;
+  z-index: 0;
+  font-weight: bold;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.options p {
+  margin: 10px;
+  color: var(--Light-Grayish-Blue);
+  font-weight: 700;
+  font-size: 14px;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.card {
+  text-align: center;
+  padding: 20px 32px;
+  border-radius: 5px;
+  box-shadow: #959da533 0px 8px 24px;
+  background: white;
+  cursor: pointer;
+  margin: 22px 0px;
+}
+.cards h4 {
+  border-bottom: var(--Light-Grayish-Blue) solid 1px;
+  padding: 10px 90px;
+  margin: 0px;
+  color: var(--Grayish-Blue);
+  font-size: 12px;
+}
+.cards h2 {
+  position: relative;
+  border-bottom: var(--Light-Grayish-Blue) solid 1px;
+  font-weight: 700;
+  font-size: 70px;
+  padding: 0px;
+  margin: 0px;
+  color: var(--Dark-Grayish-Blue);
+}
+.cards h3 {
+  color: var(--Grayish-Blue);
+  margin: 10px;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 25px;
+  padding: 10px 100px;
+  border-radius: 5px;
+  font-weight: 700;
+  color: var(--Very-Light-Grayish-Blue);
+  background-color: var(--Linear-Gradient2);
+  border: 2px solid var(--Linear-Gradient2);
+}
+.active {
+  background: var(--Linear-Gradient2);
+  color: var(--Very-Light-Grayish-Blue);
+  transform: scale(1.1);
+  margin: 22px 15px;
+}
+.active h3 {
+  color: var(--Very-Light-Grayish-Blue);
+}
+.active h4 {
+  color: var(--Very-Light-Grayish-Blue);
+}
+.active h2 {
+  position: relative;
+  color: var(--Very-Light-Grayish-Blue);
+  font-weight: 700;
+  font-size: 70px;
+  padding: 0px;
+  margin: 0px;
+}
+.active h4 {
+  color: var(--Very-Light-Grayish-Blue);
+}
+.active button {
+  background: var(--Very-Light-Grayish-Blue);
+  color: var(--Linear-Gradient2);
+  border: var(--Very-Light-Grayish-Blue);
+  font-weight: 700;
+}
+.cards .active h2 span {
+  position: absolute;
+  top: 22px;
+  left: 5px;
+  font-size: 35px;
+  width: 10px;
+}
+.card h2 span {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  font-size: 35px;
+  width: 10px;
+}
+@media (min-width: 1152px) {
+  /* fin -----*/
+  body {
+    background-position: 1px 420px, 1040px -10px;
+    background-size: 250px, 290px;
+    background-color: var(--Very-Light-Grayish-Blue);
+  }
+  .cards {
+    flex-direction: row;
+  }
+  .card {
+    margin: 0px 0px;
+  }
+}
